@@ -1,0 +1,228 @@
+@charset "UTF-8";
+html {
+  font-size: 100%; }
+
+body {
+  font-family: 'Fira Sans', Calibri, sans-serif;
+  font-size: 16px; }
+  body .header-logo-container {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem; }
+  body nav .nav-container {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 0.95rem; }
+    body nav .nav-container li {
+      margin: 0;
+      padding: 0;
+      float: left;
+      background: #090909;
+      font-weight: 600; }
+      body nav .nav-container li .nav-item {
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 0.625rem;
+        display: block;
+        line-height: 1.25rem;
+        padding-top: .25rem;
+        padding-bottom: .25rem; }
+        body nav .nav-container li .nav-item:hover {
+          text-decoration: none;
+          background-color: #9f9f9f; }
+    body nav .nav-container .go-home {
+      background: #26266e;
+      border-left: 0.0625rem solid #fff; }
+      body nav .nav-container .go-home .nav-item:hover {
+        background-color: #36369b; }
+  body nav .bread-crumbs ul {
+    list-style-type: none;
+    padding-left: 0.9375rem;
+    margin-left: 0; }
+    body nav .bread-crumbs ul .bread-crumb {
+      color: #9f9f9f;
+      float: left;
+      font-size: 0.75rem; }
+      body nav .bread-crumbs ul .bread-crumb .arrow-head {
+        padding: 0 0.5rem; }
+      body nav .bread-crumbs ul .bread-crumb.at {
+        color: #090909; }
+        body nav .bread-crumbs ul .bread-crumb.at .apron-color {
+          text-transform: capitalize; }
+  body section.product-display {
+    margin-top: 3rem; }
+    body section.product-display .product-images .large-image img {
+      max-width: 100%; }
+    body section.product-display .product-images .square {
+      cursor: pointer;
+      border-radius: 3%;
+      border: 0.125rem solid #fff; }
+      body section.product-display .product-images .square img {
+        display: inline-block;
+        margin: auto;
+        max-width: 99%;
+        height: 5.875rem; }
+      body section.product-display .product-images .square.selected {
+        border: 0.125rem solid #0A0A0A; }
+    body section.product-display .product-details .product-name {
+      font-family: 'Times New Roman', Times, serif;
+      margin-bottom: 1rem;
+      font-size: 1.5rem; }
+      body section.product-display .product-details .product-name .apron-color {
+        text-transform: capitalize; }
+    body section.product-display .product-details .product-description {
+      color: #6c6c6c;
+      font-size: 0.75rem;
+      padding-right: 3rem; }
+    body section.product-display .product-details .more-info {
+      margin: 1rem 0; }
+      body section.product-display .product-details .more-info ul {
+        list-style-type: none;
+        padding-left: 1.5rem; }
+        body section.product-display .product-details .more-info ul li {
+          color: #6c6c6c;
+          font-size: 0.8rem;
+          margin-bottom: 0.2rem; }
+          body section.product-display .product-details .more-info ul li:before {
+            content: '•';
+            color: #4d4d4d;
+            font-size: 1.75rem;
+            display: block;
+            float: left;
+            line-height: 1.125rem;
+            padding-right: 0.3125rem; }
+    body section.product-display .product-details .quantity input {
+      border: 0.0625rem solid #9f9f9f;
+      font-size: 1rem;
+      line-height: 2.5rem;
+      display: block;
+      height: 2.5rem;
+      position: relative;
+      margin: 0 0 1.25rem 0;
+      text-align: center; }
+      body section.product-display .product-details .quantity input:focus {
+        outline: none; }
+    body section.product-display .product-details .price {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem; }
+    body section.product-display .product-details .add-to-cart .add-btn {
+      background-color: #FF1130;
+      color: white;
+      text-transform: uppercase;
+      border: 0.0625rem solid #FF1130;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      letter-spacing: 0.125rem;
+      margin-bottom: 1rem; }
+      body section.product-display .product-details .add-to-cart .add-btn:focus {
+        outline: none; }
+      body section.product-display .product-details .add-to-cart .add-btn .white-triangle:after {
+        content: '\25ba';
+        color: white;
+        display: block;
+        float: right;
+        line-height: 1.375rem;
+        padding-left: 0.5rem;
+        font-size: 0.65rem; }
+    body section.product-display .product-details .expandable-container {
+      border-top: 0.0625rem solid #000;
+      border-bottom: 0.0625rem solid #000; }
+      body section.product-display .product-details .expandable-container .expandable {
+        border-bottom: 0.0625rem solid #9f9f9f; }
+        body section.product-display .product-details .expandable-container .expandable:last-child {
+          border-bottom: none; }
+        body section.product-display .product-details .expandable-container .expandable .expand-text {
+          opacity: 0;
+          max-height: 0;
+          font-size: 0;
+          transition: .25s ease;
+          padding-left: 1.5rem;
+          padding-bottom: 0; }
+        body section.product-display .product-details .expandable-container .expandable .expand-title {
+          font-size: 1.125rem;
+          font-family: 'Times New Roman', Times, serif;
+          text-transform: uppercase;
+          padding: 0.5rem 0;
+          font-weight: 400;
+          margin-bottom: 0;
+          cursor: pointer; }
+          body section.product-display .product-details .expandable-container .expandable .expand-title:before {
+            content: '\25ba';
+            display: inline-block;
+            margin-right: 0.5rem; }
+        body section.product-display .product-details .expandable-container .expandable .expand-state {
+          display: none; }
+          body section.product-display .product-details .expandable-container .expandable .expand-state:checked ~ .expandable-wrapper .expand-text {
+            opacity: 1;
+            font-size: 0.75rem;
+            max-height: 5rem;
+            padding-bottom: 0.5rem; }
+          body section.product-display .product-details .expandable-container .expandable .expand-state:checked ~ .expand-title:before {
+            transition: .25s ease;
+            transform: rotate(90deg);
+            padding-right: 0; }
+  body .modal .modal-content .close:focus {
+    outline: none; }
+  body .modal .modal-content .modal-body .modal-apron-name {
+    text-transform: capitalize; }
+  body .modal .modal-content .modal-footer .btn:focus {
+    outline: none; }
+  body footer {
+    background: #eaeaea;
+    font-size: 0.65rem;
+    border-top: 0.0625rem solid gray;
+    border-right: 1.875rem solid #eaeaea;
+    border-left: 1.875rem solid #eaeaea;
+    padding: 1rem;
+    margin-top: 3rem; }
+    body footer .updated-date {
+      color: red; }
+  @media screen and (min-width: 20rem) {
+    body nav .nav-container li {
+      width: 20%; }
+      body nav .nav-container li .desktop-home {
+        display: none; }
+      body nav .nav-container li .responsive-home {
+        display: block; }
+    body nav .nav-container .go-home.long-item {
+      width: 100%; }
+    body nav .nav-container .go-home .desktop-home {
+      display: none; }
+    body nav .nav-container .go-home .responsive-home {
+      display: block; }
+    body section.product-display .product-images .large-image {
+      margin-bottom: 1rem; }
+    body section.product-display .product-details .quantity input {
+      width: 25%; } }
+  @media screen and (min-width: 48rem) {
+    body nav .nav-container li {
+      width: 9.09%; }
+    body nav .nav-container .go-home.long-item {
+      width: 9.09%; } }
+  @media screen and (min-width: 57.5rem) {
+    body nav .nav-container li {
+      width: 7%; }
+      body nav .nav-container li.long-item {
+        width: 9%; }
+      body nav .nav-container li.long-item-1 {
+        width: 15%; }
+      body nav .nav-container li .desktop-home {
+        display: block; }
+      body nav .nav-container li .responsive-home {
+        display: none; }
+    body nav .nav-container .go-home.long-item {
+      width: 18%; }
+    body nav .nav-container .go-home .desktop-home {
+      display: block; }
+    body nav .nav-container .go-home .responsive-home {
+      display: none; }
+    body section.product-display .product-images .large-image {
+      margin-bottom: 3rem; }
+    body section.product-display .product-images .square:first-child {
+      margin-left: 9%; }
+    body section.product-display .product-details .quantity input {
+      width: 14%; } }
