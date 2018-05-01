@@ -1,5 +1,41 @@
+@import './grid_mixin';
+
 html {
     font-size: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+[class$='-ws'] {
+    &:before, &:after {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+    }
+}
+[class^='c-'] {
+    float: left;
+}
+.text-center {
+    text-align: center;
+}
+.container-fw-ws {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.r-ws {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+    position: relative;
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+.c-fw-ws {
+    @include col(12);
 }
 body {
     font-family: 'Fira Sans', Calibri, sans-serif;
@@ -82,11 +118,10 @@ body {
                 cursor: pointer;
                 border-radius: 3%;
                 border: 0.125rem solid #fff;
+                float: left;
                 img {
                     display: inline-block;
                     margin: auto;
-                    max-width: 99%;
-                    height: 5.875rem;
                 }
                 &.selected {
                     border: 0.125rem solid #0A0A0A;
@@ -158,6 +193,7 @@ body {
                     padding: 0.5rem 0.75rem;
                     letter-spacing: 0.125rem;
                     margin-bottom: 1rem;
+                    cursor: pointer;
                     &:focus {
                         outline: none;
                     }
@@ -230,25 +266,82 @@ body {
         }
     }
     .modal {
+        .modal-dialog {
+            transform: translate(0, -25%);
+            transition: transform .3s ease-out;
+            width: 40%;
+            margin: 2.8125rem auto;
+            position: relative;
+        }
+        &.in {
+            .modal-dialog {
+                transform: translate(0,0);
+            }
+        }
         .modal-content {
+            border: 0.0625rem solid rgba(0,0,0,.35);
+            border-radius: 0.3125rem;
+            outline: 0;
+            background-color: #fff;
             .close {
                 &:focus {
                     outline: none;
                 }
             }
+            .modal-header {
+                padding: 1.25rem;
+                border-bottom: 0.0625rem solid #9f9f9f;
+            }
             .modal-body {
+                padding: 1.25rem;
+                p {
+                    margin-bottom: 0;
+                }
                 .modal-apron-name {
                     text-transform: capitalize;
                 }
             }
             .modal-footer {
+                border-top: 0.0625rem solid #9f9f9f;
                 .btn {
+                    display: inline-block;
+                    padding: 0.25rem 1rem;
+                    font-size: 0.875rem;
+                    font-weight: 600;
+                    color: #fff;
+                    text-transform: uppercase;
+                    letter-spacing: 0.125rem;
+                    line-height: 2.125rem;
+                    text-align: center;
+                    cursor: pointer;
+                    border: 0.0625rem solid #FF1130;
+                    background-color: #FF1130;
+                    border-radius: 0.3125rem;
                     &:focus {
                         outline: none;
                     }
                 }
             }
         }
+    }
+    .modal-bdp {
+        &.fade {
+            opacity: 0;
+        }
+        &.in {
+            opacity: .5;
+        }
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        background-color: #000;
+    }
+    .fade {
+        opacity: 0;
+        transition: opacity .15s linear;
     }
     footer {
         background: lighten(#C9C9C9, 13%);
@@ -263,6 +356,21 @@ body {
         }
     }
     @media screen and (min-width: 20rem) {
+        .c-os1-mbl-ws {
+            @include offset(1);
+        }
+        .c-os2-mbl-ws {
+            @include offset(2);
+        }
+        .c-4-mbl-ws {
+            @include col(4);
+        }
+        .c-8-mbl-ws {
+            @include col(8);
+        }
+        .c-10-mbl-ws {
+            @include col(10);
+        }
         nav {
             .nav-container {
                 li {
@@ -289,11 +397,23 @@ body {
         }
         section.product-display {
             .product-images {
+                margin-bottom: 1.125rem;
                 .large-image {
                     margin-bottom: 1rem;
+                    margin-top: 1rem;
+                }
+                .square {
+                    @include col(4);
+                    img {
+                        max-width: 100%;
+                        height: 6.125rem;
+                    }
                 }
             }
             .product-details {
+                .product-description {
+                    padding-right: 0;
+                }
                 .quantity {
                     input {
                         width: 25%;
@@ -303,6 +423,9 @@ body {
         }
     }
     @media screen and (min-width: 48rem){
+        .c-os0-dktsm-ws {
+            @include offset(0);
+        }
         nav {
             .nav-container {
                 li {
@@ -315,8 +438,33 @@ body {
                 }
             }
         }
+        section.product-display {
+            .product-images {
+                .large-image {
+                    margin-bottom: 3rem;
+                }
+                .square {
+                    @include col(2);
+                }
+            }
+        }
     }
     @media screen and (min-width: 57.5rem) {
+        .c-os0-dkt-ws {
+            @include offset(0);
+        }
+        .c-os1-dkt-ws {
+            @include offset(0);
+        }
+        .c-2-dkt-ws {
+            @include col(2);
+        }
+        .c-5-dkt-ws {
+            @include col(5);
+        }
+        .c-6-dkt-ws {
+            @include col(6);
+        }
         nav {
             .nav-container {
                 li {
@@ -349,12 +497,15 @@ body {
         }
         section.product-display {
             .product-images {
-                .large-image {
-                    margin-bottom: 3rem;
-                }
+                margin-bottom: 0;
                 .square {
+                    @include col(2);
                     &:first-child{
                         margin-left: 9%;
+                    }
+                    img {
+                        max-width: 4.75rem;
+                        height: 5.875rem;
                     }
                 }
             }

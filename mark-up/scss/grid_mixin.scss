@@ -1,0 +1,6 @@
+@mixin col($cols) {
+    width: calc((100% / 12) * #{$cols} );
+}
+@mixin offset($cols) {
+    margin-left: calc((100% / 12) * #{$cols});
+}

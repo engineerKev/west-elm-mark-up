@@ -11,8 +11,8 @@ function handleError (error) {
 gulp.task( 'browser-sync', ['sass', 'scripts'], function () {
 	browserSync( {
 		server: {
-            baseDir: "dist",
-            index: 'classic-apron.html',
+      baseDir: "dist",
+      index: 'classic-apron.html',
 			injectChanges: true
 		}
 	} );
